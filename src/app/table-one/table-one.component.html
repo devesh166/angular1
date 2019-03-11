@@ -1,0 +1,13 @@
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let element of thead" (click)="sortData(element)"> {{element}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let j of data; let i =index">{{getData(i)}} 
+      <td *ngFor="let el of tableData ">{{el}}</td>
+    </tr>
+  </tbody>
+
+</table>
