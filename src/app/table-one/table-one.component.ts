@@ -15,24 +15,25 @@ export class TableOneComponent implements OnInit {
   public temp :number;
   public str:string="id";
   constructor() { }
-
+  //public thead = Object.keys(this.data[0]);
   ngOnInit() {
     
     var json = new JsonDataService();
      this.data =json.fetchData();
    // console.log(data);
   
-    this.thead = Object.keys(this.data[0])
-
+    
+   this.thead = Object.keys(this.data[0]);
 
 
   }
+  
   getData(i: number){
-
+  
      
-    this.tableData =Object.values(this.data[i])
+    return Object.values(this.data[i])
 
-    //console.log(this.tableData[i])
+    //console.log(this.tableData)
    }
 
    sortData(params) {
@@ -64,7 +65,7 @@ export class TableOneComponent implements OnInit {
     }
     //console.log(params)
    //console.log(this.data)
-     
+   //this.thead = Object.keys(this.data[0]);
 }
 
 }
