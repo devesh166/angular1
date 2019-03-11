@@ -16,10 +16,11 @@ export class TableOneComponent implements OnInit {
   public str:string="id";
   constructor() { }
   //public thead = Object.keys(this.data[0]);
+  public json;
   ngOnInit() {
     
-    var json = new JsonDataService();
-     this.data =json.fetchData();
+     this.json = new JsonDataService();
+     this.data =this.json.fetchData();
    // console.log(data);
   
     
@@ -35,10 +36,17 @@ export class TableOneComponent implements OnInit {
 
     //console.log(this.tableData)
    }
+   reload1(){
+   
+    //location.reload();
+     
+       
+   }
 
    sortData(params) {
    //let params:any ="title";
   // if(typeof(params)
+  //this.data =this.json.fetchData();
     if (this.flag2) {
         this.data.sort(function (a, b) {
             var textA = a[params] ;
@@ -64,8 +72,10 @@ export class TableOneComponent implements OnInit {
         this.flag2 = true;
     }
     //console.log(params)
-   //console.log(this.data)
+   console.log(this.data)
+
    //this.thead = Object.keys(this.data[0]);
+   
 }
 
 }

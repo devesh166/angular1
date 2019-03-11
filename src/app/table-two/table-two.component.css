@@ -1,0 +1,9 @@
+button{
+    margin: 50pt;
+    
+}
+table,
+th,
+td {
+    border: 1px solid black;
+}
