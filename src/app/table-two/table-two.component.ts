@@ -22,7 +22,7 @@ export class TableTwoComponent implements OnInit {
   public name1: string;
   public name2: string;
   public name3: string;
-  public obj :any;
+ // public obj :any;
  
   constructor( private myservice: JsonDataService) {
     
@@ -32,7 +32,8 @@ export class TableTwoComponent implements OnInit {
  
   ngOnInit() {
     //this.location.reload();
-    this.data = this.myservice.fetchData();
+    this.data = this.myservice.getdata();
+   
     
   }
   takeinput(i){
@@ -40,25 +41,33 @@ export class TableTwoComponent implements OnInit {
     //; 
    }
     putData(){
-     
+       document.getElementById("tablebody").style.display="block";
+       document.getElementById("ok").style.display="inline-block";
+       document.getElementById("cancel").style.display="inline-block";
+       
       this.thead = Object.keys(this.data[0]);
       
     }
+    value;
     submitData(){
-       this.obj = {
+        let obj = {
          "userId": parseInt(this.name0)
           ,
         "id": parseInt(this.name1),
         "title": this.name2,
         "body":this.name3
       }
-      let load =new TableOneComponent;
-      load.reload1();
+      
+     
+     // console.log(load.data)
      // load.ngOnInit();
      // load.sortData("id");
 
-      this.omitData();
-      return this.myservice.loadData(this.obj);
+     this.value=this.myservice.getdata();
+     this.value.push(obj);
+     //console.log(this.value);
+     this.omitData();
+      //return this.myservice.data.push(obj);
 
       //console.log(this.myservice.data);
 
@@ -71,5 +80,5 @@ export class TableTwoComponent implements OnInit {
 
     }
     
-
+    
 }

@@ -14,14 +14,20 @@ export class TableOneComponent implements OnInit {
   public flag2:boolean =true;
   public temp :number;
   public str:string="id";
-  constructor() { }
+  constructor(private myservice:JsonDataService) { 
+
+
+  }
+
+    
+  
   //public thead = Object.keys(this.data[0]);
   public json;
   ngOnInit() {
     
-     this.json = new JsonDataService();
-     this.data =this.json.fetchData();
-   // console.log(data);
+    // this.json = new JsonDataService();
+     this.data =this.myservice.getdata();
+    //console.log(this.data);
   
     
    this.thead = Object.keys(this.data[0]);
@@ -34,9 +40,11 @@ export class TableOneComponent implements OnInit {
      
     return Object.values(this.data[i])
 
+
     //console.log(this.tableData)
    }
-   reload1(){
+   reload1(obj){
+     this.data.push(obj);
    
     //location.reload();
      

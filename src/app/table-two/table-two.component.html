@@ -1,22 +1,22 @@
  
- <button (click)= "putData()"  >ADD</button>
- <table>
-    <thead>
+ <button (click)= "putData()" id = "btn" >ADD</button>
+ <table  id="tableid"> 
+    <!-- <thead>
         <tr >
   <th  *ngFor="let el of thead" > {{el}}</th>
 </tr>
-</thead>
-<tbody>
+</thead> -->
+<tbody id="tablebody"> 
   <tr> 
-    <td  ><input type="text" [(ngModel)]="name0"  >  </td>
-    <td  ><input type="text" [(ngModel)]="name1"  >  </td>
-    <td  ><input type="text" [(ngModel)]="name2"  >  </td>
-    <td  ><input type="text" [(ngModel)]="name3"  >  </td>
+    <td  ><input type="text" placeholder="userId" [(ngModel)]="name0"  >  </td>
+    <td  ><input type="text" placeholder="id" [(ngModel)]="name1"  >  </td>
+    <td  ><input type="text" placeholder="title" [(ngModel)]="name2"  >  </td>
+    <td  ><input type="text" placeholder="body" [(ngModel)]="name3"  >  </td>
   </tr>
 
 </tbody>
  </table>
- <button (click)= "submitData()"  >OK</button>
- <button (click)= "omitData()"  >CANCEL</button>
+ <button (click)= "submitData()"  id="ok"  >OK</button>
+ <button (click)= "omitData()"  id="cancel" >CANCEL</button>
 
  

@@ -1,9 +1,16 @@
 button{
     margin: 50pt;
-    
+    display: none;
 }
 table,
 th,
 td {
     border: 1px solid black;
+     
+}
+#tablebody{
+    display: none;
+}
+#btn{
+    display: block;
 }
